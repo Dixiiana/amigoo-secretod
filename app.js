@@ -30,7 +30,9 @@ if (listaDeAmigos === amigoSecreto) {
     return;
 }
 
-
+function agregarAmigo() {
+  console.log(agregarAmigo);
+}
 
 function generarAmigoSecreto (){
 let amigoSecreto = Math.floor(Math.random ()* numeroMáximo + 1);
