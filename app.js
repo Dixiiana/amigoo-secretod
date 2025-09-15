@@ -29,7 +29,7 @@ function agregarAmigo() {
     asignarTextoElemento('p', `Amigos agregados: ${amigos.join(', ')}`);
 }
 
-function generarAmigoSecreto() {
+function sortearAmigo() {
     if (amigos.length < 2) {
         alert("Necesitas al menos cinco amigos para generar un amigo secreto.");
         return;
