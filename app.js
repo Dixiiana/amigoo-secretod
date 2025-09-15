@@ -13,6 +13,12 @@ function asignarTextoElemento('#amigos-list', `Amigos agregados: ${amigos.join('
 function agregarAmigo() {
     let inputAmigo = document.getElementById('amigo');
     let amigo = inputAmigo.value.trim(); // Usa trim() para eliminar espacios en blanco
+}
+
+    function agregarAmigo() {
+      // Your code to add an amigo goes here
+      console.log("Adding an amigo!");
+    }
 
     if (amigo === "") {
         alert("Por favor, ingresa el nombre de un amigo.");
