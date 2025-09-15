@@ -1,24 +1,29 @@
-let amigoSecreto = generarAmigoSecreto ();
+let amigos = [];
 let intentos = 0;
 let numeroMáximo = 5;
-let listaDeAmigos = [];
 
 
-function asignarTextoElemento (elemento,texto); {
-let elementoHTML = document. querySelector(elemento);
-elementoHTML.innerHTML= texto;
-return;
 
+function agregarAmigo () {
+ let inputAmigo = document.getElementById('amigo');
+ let amigo = inputAmigo.value;
+
+ if (amigo === ""){
+  alert ("Por favor, ingresa el nombre de un amigo");
+  return;
+}
+
+ amigos.push(amigo);
 }
 
 function verificarIntento() {
  let amigoSecreto = parseInt(document.getElementById('amigo').value);
 
-if (listaDeAmigos === amigoSecreto) {
+if (amigo === amigoSecreto) {
         asignarTextoElemento('p',`Acertó el nombre del Amigo Secreto ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
-        //El usuario no acertó.
+        
         if (listaDeAmigos = amigoSecreto) {
             asignarTextoElemento('p','El nombre del amigo no es ese');
         } else {
@@ -30,24 +35,21 @@ if (listaDeAmigos === amigoSecreto) {
     return;
 }
 
-function agregarAmigo() {
-  console.log(agregarAmigo);
-}
+
 
 function generarAmigoSecreto (){
-let amigoSecreto = Math.floor(Math.random ()* numeroMáximo + 1);
+let amigo = Math.floor(Math.random ()* numeroMáximo + 1);
 
 console.log(amigoSecretoGenerado);
-    console.log(listaDeAmigos);
-    //Si ya sorteamos todos los números
-    if (listaDeAmigosSecretos.length == numeroMaximo) {
+   
+    if (amigo.length == numeroMaximo) {
         asignarTextoElemento('p','Ya se sortearon todos los nombres de amigos');
     } else {
-        //Si el nombre generado está incluido en la lista 
-        if (listaDeAmigos.includes(amigoSecretoGenerado)) {
+        
+        if (amigo.includes(amigoSecretoGenerado)) {
             return generarAmigoSecreto();
         } else {
-            listaDeAmigos.push(amigoSecretoGenerado);
+            amigo.push(amigoSecretoGenerado);
             return amigoSecretoGenerado;
         }
     }
@@ -56,9 +58,9 @@ console.log(amigoSecretoGenerado);
 function condicionesIniciales() {
     asignarTextoElemento('h1','¡Juego del amigo secreto!');
     asignarTextoElemento('p',`Indica nombre de amigos ${numeroMáximo}`);
-    amigoSecreto = generarAmigoSecreto();
+    amigo = generarAmigoSecreto();
     intentos = 1;
-    console.log(amigoSecreto);
+ 
 }
 
 
@@ -66,7 +68,6 @@ function condicionesIniciales() {
 function condicionesIniciales() {
     asignarTextoElemento('h1','¡Juego del amigo secreto!');
     asignarTextoElemento('p',`Indica nombre de amigos ${numeroMáximo}`);
-    amigoSecreto = generarAmigoSecreto();
+    amigo = generarAmigoSecreto();
     intentos = 1;
-    console.log(amigoSecreto);
 }
