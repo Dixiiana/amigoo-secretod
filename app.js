@@ -3,7 +3,7 @@ let numeroMaximo = 5;
 let amigoSecreto = '';
 let intentos = 0;
 
-function asignarTextoElemento('#amigos-list', `Amigos agregados: ${amigos.join(', ')}`); {
+function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
     
