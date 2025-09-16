@@ -12,16 +12,15 @@ function asignarTextoElemento(elemento, texto) {
 
 function agregarAmigo() {
     let inputAmigo = document.getElementById('amigo');
-    let amigo = inputAmigo.value.trim(); // Usa trim() para eliminar espacios en blanco
-}
-
-    function agregarAmigo() {
-      // Your code to add an amigo goes here
-      console.log("Adding an amigo!");
-    }
+    let amigo = inputAmigo.value.trim();
 
     if (amigo === "") {
         alert("Por favor, ingresa el nombre de un amigo.");
+        return;
+    }
+
+    if (amigos.includes(amigo)) {
+        alert("Ese nombre ya fue agregado.");
         return;
     }
 
@@ -31,10 +30,11 @@ function agregarAmigo() {
     }
 
     amigos.push(amigo);
-    inputAmigo.value = ''; // Limpia el input después de agregar
+    inputAmigo.value = ''; // Limpiar el campo
     console.log(amigos);
     asignarTextoElemento('p', `Amigos agregados: ${amigos.join(', ')}`);
 }
+
 
 function sortearAmigo() {
     if (amigos.length < 2) {
@@ -47,6 +47,15 @@ function sortearAmigo() {
     asignarTextoElemento('p', '¡Amigo secreto generado! Adivina quién es.');
     return amigoSecreto;
 }
+
+function mostrarAmigoSecreto() {
+    if (amigoSecreto === '') {
+        alert("Primero debes sortear un amigo secreto.");
+        return;
+    }
+    asignarTextoElemento('p', `🎁 El amigo secreto es: ${amigoSecreto}`);
+}
+
 
 function verificarIntento() {
     let inputIntento = document.getElementById('amigo');
